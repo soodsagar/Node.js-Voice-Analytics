@@ -1,8 +1,6 @@
 /***********************************************************************
- *   Author: Tyler Roussos
+ *   Author: Sagar Sood
  *   Filename: app.js
- *   Date Created: October 2, 2012
- *   Last Modified: April 22, 2013
  *   Description:
  *
  *     This node.js app will give a simple interface for
