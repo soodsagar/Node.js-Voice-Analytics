@@ -1,0 +1,180 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            div.top-navbar
+                img(src="http://whataremindsfor.com/wp-content/uploads/2013/05/WRM4_Large.png", width="130")
+        br
+        br
+        div.row
+            div.col-lg-5
+                div(class="panel panel-info")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-microphone")
+                        b  Voice Commands Usage
+                    div.panel-body
+                        div.row
+                            div.col-sm-6
+                                div.doughnut-holder
+                                    canvas(id="doughnut-area", width="270", height="270")
+                            div.col-sm-1
+                            div.col-sm-5
+                                br
+                                br
+                                table
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #BF616A;")
+                                        td &nbsp;&nbsp; Garage Door
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: whitesmoke;")
+                                        td
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #A3BE8C;")
+                                        td &nbsp;&nbsp; Bedroom-2 Temp.
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: whitesmoke;")
+                                        td
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #EBCB8B;")
+                                        td &nbsp;&nbsp; Kitchen Lighting
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: whitesmoke;")
+                                        td
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #949FB1;")
+                                        td &nbsp;&nbsp; Bedroom-1 Lighting
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: whitesmoke;")
+                                        td
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #B48EAD;")
+                                        td &nbsp;&nbsp; Alarm Clock
+
+            div.col-lg-7
+                div(class="panel panel-info")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-microphone")
+                        b  Voice Commands Usage Details
+                    div.panel-body
+                        table(class="table table-striped")
+                            tr
+                                th #
+                                th Home ID
+                                th Command
+                                th Total Usage
+                            tr
+                                td 1
+                                td 4096
+                                td Garage Door
+                                td 39
+                            tr
+                                td 2
+                                td 4077
+                                td Bedroom-2 Temperature
+                                td 33
+                            tr
+                                td 3
+                                td 4082
+                                td Kitchen Lighting
+                                td 30
+                            tr
+                                td 4
+                                td 4101
+                                td Bedroom-1 Lighting
+                                td 29
+                            tr
+                                td 5
+                                td 4094
+                                td Alarm-Clock
+                                td 22
+                            tr
+                                td 6
+                                td 4074
+                                td Living Room TV
+                                td 11
+
+
+        div.row
+            div.col-lg-12
+                div(class="panel panel-info")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-calendar")
+                        b  Periodic Usage
+                    div.panel-body
+                        div(class="row", style="text-align:center;")
+
+                                span(class="label label-info") 1 day
+                                &nbsp;
+                                span(class="label label-info") 1 week
+                                &nbsp;
+                                span(class="label label-info") 1 month
+                                &nbsp;
+                                span(class="label label-success") 6 months
+                                &nbsp;
+                                span(class="label label-info") 1 year
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                span
+                                    input(class="form-control input-sm", id="inline-input", type="date")
+                                    span  to
+                                    &nbsp;
+                                    input(class="form-control input-sm", id="inline-input", type="date")
+                                br
+                                hr
+                                br
+                        div.row
+                            div.col-md-6
+                                table(class="table table-striped")
+                                    tr
+                                        th #
+                                        th Month
+                                        th Home ID
+                                        th Total Usage
+                                    tr
+                                        td 1
+                                        td January
+                                        td 4094
+                                        td 39
+                                    tr
+                                        td 2
+                                        td February
+                                        td 4077
+                                        td 33
+                                    tr
+                                        td 3
+                                        td March
+                                        td 4082
+                                        td 30
+                                    tr
+                                        td 4
+                                        td April
+                                        td 4101
+                                        td 29
+                                    tr
+                                        td 5
+                                        td May
+                                        td 4094
+                                        td 22
+                                    tr
+                                        td 6
+                                        td June
+                                        td 4097
+                                        td 11
+                            div.col-md-6
+                                div.graph-holder
+                                    canvas(id="graph-area", width="700", height="400")
+        br
+        br
+        br
+        br
+
+
+
+
+
+
+
+    script(type='text/javascript', src='/javascript/wrm4_charts.js')

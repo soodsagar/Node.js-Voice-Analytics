@@ -1,0 +1,221 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            div.top-navbar
+                img(src="http://whataremindsfor.com/wp-content/uploads/2013/05/WRM4_Large.png", width="130")
+        br
+        br
+        div.row
+            div(class="col-lg-4 col-lg-offset-4")
+                div(class="panel panel-info")
+                    div.panel-heading
+                        h7(align="center") SEARCH
+                    div.panel-body
+                        input(type="hidden", name="appkey", value="59cddd076cf2a00b9f5555585c177276d8a49873")
+                        input(type="hidden", name="appsecret", value="01d3cb9455722c2f6760e11f14a0571179649873")
+                        input(type="hidden", name="conkey", value="09326eefff2cad2ae9f4c0fd5d4c7b71db249873")
+                        input(type="hidden", name="consecret", value="7092379b31cd621c2c1b574e47ec956733f49873")
+                        ul.nav.nav-tabs(role='tablist')
+                            li.active
+                                a(href='#home-id-tab', role='tab', data-toggle='tab') Home ID
+                            li
+                                a(href='#user-id-tab', role='tab', data-toggle='tab') User ID
+                            li
+                                a(href='#all-tab', role='tab', data-toggle='tab') All Results
+                            div.tab-content
+                                br
+                                br
+                                br
+                                #home-id-tab.tab-pane.active.text-center
+                                    div.input-group
+                                        input(class="form-control input-sm", placeholder="Home ID", name="homeid", id="homeid", value="TEST_HPM_ID")
+                                        span.input-group-btn
+                                            button(type="submit", class="btn btn-warning", id="search-home")
+                                                i(class="fa fa-search") &nbsp; Search
+                                #user-id-tab.tab-pane.text-center
+                                    div.input-group
+                                        input(class="form-control input-sm", placeholder="User ID", name="userid", id="userid", value="09326eeeee2cad2ae9f4c0fd5d4c7b71db2b0e48")
+                                        span.input-group-btn
+                                            button(type="submit", class="btn btn-warning", id="search-user")
+                                                i(class="fa fa-search") &nbsp; Search
+                                #all-tab.tab-pane.text-center
+                                    button(type="submit", class="btn btn-warning btn-block", id="search-all")
+                                        i(class="fa fa-bar-o") &nbsp; Show All Results
+                                div.error
+        br
+        br
+        div(class="row")
+            div.col-lg-6
+                div(class="panel panel-info", id="data-content-1", style="display:none")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-microphone")
+                        b  Total Voice Commands Usage
+                    div.panel-body
+                        div.row
+                            div.col-sm-1
+                            div.col-sm-6
+                                div(class="doughnut-holder", style="float:left !important;")
+                                    canvas(id="doughnut-area", width="270", height="270")
+                            div.col-sm-1
+                            div.col-sm-4
+                                br
+                                br
+                                table(class="donut-breakdown table table-responsive", border="0")
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #BF616A;")
+                                        td &nbsp;&nbsp; Garage Door
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #A3BE8C;")
+                                        td &nbsp;&nbsp; Bedroom-2 Temp.
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #EBCB8B;")
+                                        td &nbsp;&nbsp; Kitchen Lighting
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #949FB1;")
+                                        td &nbsp;&nbsp; Bedroom-1 Lighting
+                                    tr.donut-tr
+                                        td(class="small-block-td", style="background-color: #B48EAD;")
+                                        td &nbsp;&nbsp; Alarm Clock
+
+            div.col-lg-6
+                div(class="panel panel-info", id="data-content-2", style="display:none")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-microphone")
+                        b  Total Voice Commands Usage Details
+                    div.panel-body
+                        table(class="table table-striped", id="command_table")
+                            tr
+                                th #
+                                th Home ID
+                                th Command
+                                th Total Usage
+                            tr
+                                td 1
+                                td 4096
+                                td Garage Door
+                                td 39
+                            tr
+                                td 2
+                                td 4077
+                                td Bedroom-2 Temperature
+                                td 33
+                            tr
+                                td 3
+                                td 4082
+                                td Kitchen Lighting
+                                td 30
+                            tr
+                                td 4
+                                td 4101
+                                td Bedroom-1 Lighting
+                                td 29
+                            tr
+                                td 5
+                                td 4094
+                                td Alarm-Clock
+                                td 22
+                            tr
+                                td 6
+                                td 4074
+                                td Living Room TV
+                                td 11
+
+                    div.panel-footer
+                        div(style="text-align:center; width: 100%")
+                            span.total-commands-details
+
+        div(class="row")
+            div.col-lg-12
+                div(class="panel panel-info", id="data-content-3", style="display:none")
+                    div.panel-heading
+                        h5.
+                        i(class="fa fa-calendar")
+                        b  Periodic Usage
+                    div.panel-body
+                        div(class="row", style="text-align:center;")
+
+                                &nbsp;
+                                button(class="btn btn-sm btn-info day-btn", id="7-days") 7 days
+                                &nbsp;
+                                button(class="btn btn-sm btn-info day-btn", id="30-days") 30 days
+                                &nbsp;
+                                button(class="btn btn-sm btn-info day-btn", id="90-days") 90 days
+                                &nbsp;
+                                button(class="btn btn-sm btn-info day-btn", id="180-days") 180 days
+                                br
+                                hr
+                                br
+                        div(class="row")
+                            div.periodic-content
+                            div.col-md-6
+                                table(class="table table-striped", id="graph-table")
+                                    tr
+                                        th #
+                                        th Month
+                                        th Home ID
+                                        th Total Usage
+                                    tr
+                                        td 1
+                                        td January
+                                        td 4094
+                                        td 39
+                                    tr
+                                        td 2
+                                        td February
+                                        td 4077 
+                                        td 33
+                                    tr
+                                        td 3
+                                        td March
+                                        td 4082
+                                        td 30
+                                    tr
+                                        td 4
+                                        td April
+                                        td 4101
+                                        td 29
+                                    tr
+                                        td 5
+                                        td May
+                                        td 4094
+                                        td 22
+                                    tr
+                                        td 6
+                                        td June
+                                        td 4097
+                                        td 11
+                            div(class="col-md-6", id="graph-holder")
+                                ul.nav.nav-tabs(role='tablist')
+                                    li.active
+                                        a(href='#line-chart', role='tab', data-toggle='tab') Line Chart
+                                    li
+                                        a(href='#bar-chart', role='tab', data-toggle='tab') Bar Chart
+                                div.tab-content
+                                    br
+                                    br
+                                    #line-chart.tab-pane.active
+                                        div.graph-holder-line-chart
+                                            canvas(id="graph-area-line", width="700", height="400")
+                                    #bar-chart.tab-pane
+                                        div.graph-holder-bar-chart
+                                            canvas(id="graph-area-bar", width="700", height="400")
+
+
+        br
+        br
+        br
+        br
+
+
+
+
+
+
+
+    script(type='text/javascript', src='/javascript/wrm4_charts.js')
+    script(type='text/javascript', src='/javascript/functions.js')
+    script(type='text/javascript', src='/javascript/api_calls.js')

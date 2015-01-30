@@ -1,0 +1,5 @@
+#Don't save the .wav files into the repo
+*.wav
+public/uploads
+public/tts
+public/logs
