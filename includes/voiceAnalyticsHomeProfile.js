@@ -1,11 +1,5 @@
 /***********************************************************************
  *   Author: Sagar Sood
- *   Description:
- *
- *     This node.js app will give a simple interface for
- *     uploading a file. It will store it on the server and the send it
- *     to iSpeech's recognition services.
- *
  * *********************************************************************/
 
 var param = new require('./vars.js');
